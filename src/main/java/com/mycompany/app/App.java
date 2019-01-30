@@ -59,22 +59,41 @@ public class App
           System.out.println(inputList);
 
 
-          String input2 = req.queryParams("input2").replaceAll("\\s","");
-          int input2AsInt = Integer.parseInt(input2);
-
-          String input3 = req.queryParams("input3");
-          java.util.Scanner sc3 = new java.util.Scanner(input3);
-          sc3.useDelimiter("[;\r\n]+");
+          
+          
+          
+          
+          String input2 = req.queryParams("input2");
+          java.util.Scanner sc2 = new java.util.Scanner(input2);
+          sc2.useDelimiter("[;\r\n]+");
           java.util.ArrayList<Integer> inputList2 = new java.util.ArrayList<>();
-          while (sc3.hasNext())
+          while (sc2.hasNext())
           {
-            int value = Integer.parseInt(sc3.next().replaceAll("\\s",""));
+            int value = Integer.parseInt(sc2.next().replaceAll("\\s",""));
             inputList2.add(value);
           }
 
+          
+          
+          
+          
+          
+          
+          
+          
+          String input3 = req.queryParams("input3").replaceAll("\\s","");
+          int input3AsInt = Integer.parseInt(input3);
+
+          
+          
+          
+     
+          
+          
           //Burada 2. sayiyi alir
           String input4 = req.queryParams("input4").replaceAll("\\s","");
           int input4AsInt = Integer.parseInt(input4);
+          
           
           
           boolean result = App.search(inputList,inputList2, input2AsInt,input4AsInt);
