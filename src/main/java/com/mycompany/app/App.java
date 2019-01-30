@@ -37,7 +37,7 @@ public class App
     	  
       return false;
     }
-/*
+
     public static void main(String[] args) {
         port(getHerokuAssignedPort());
 
@@ -62,7 +62,22 @@ public class App
           String input2 = req.queryParams("input2").replaceAll("\\s","");
           int input2AsInt = Integer.parseInt(input2);
 
-          boolean result = App.search(inputList, input2AsInt);
+          String input3 = req.queryParams("input3");
+          java.util.Scanner sc3 = new java.util.Scanner(input3);
+          sc3.useDelimiter("[;\r\n]+");
+          java.util.ArrayList<Integer> inputList2 = new java.util.ArrayList<>();
+          while (sc3.hasNext())
+          {
+            int value = Integer.parseInt(sc3.next().replaceAll("\\s",""));
+            inputList2.add(value);
+          }
+
+          //Burada 2. sayiyi alir
+          String input4 = req.queryParams("input4").replaceAll("\\s","");
+          int input4AsInt = Integer.parseInt(input4);
+          
+          
+          boolean result = App.search(inputList,inputList2, input2AsInt,input4AsInt);
 
          Map map = new HashMap();
           map.put("result", result);
@@ -85,5 +100,5 @@ public class App
             return Integer.parseInt(processBuilder.environment().get("PORT"));
         }
         return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
-    }*/
+    }
 }
