@@ -96,7 +96,7 @@ public class App
           
           
           
-          boolean result = App.search(inputList,inputList2, input2AsInt,input4AsInt);
+          boolean result = App.search(inputList,inputList2, input3AsInt,input4AsInt);
 
          Map map = new HashMap();
           map.put("result", result);
